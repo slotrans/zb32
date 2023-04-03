@@ -1,4 +1,6 @@
 import java.util.Random;
+import java.util.stream.IntStream;
+import java.util.stream.Collectors;
 
 import net.sourceforge.argparse4j.ArgumentParsers;
 import net.sourceforge.argparse4j.inf.ArgumentParser;
@@ -44,7 +46,18 @@ public class Zb32
         {
             sb.append(ALPHABET.charAt(rng.nextInt(32)));
         }
-        
+
         return sb.toString();
+    }
+
+    private static String generateZb32StringWithStreams(Random rng, int length)
+    {
+        // This isn't super great...
+        // Collectors.joining() doesn't accept char/Character hence the String::valueOf
+        // A custom Collector could perhaps obviate the need for that
+        return IntStream.range(0, length)
+            .mapToObj(x -> ALPHABET.charAt(rng.nextInt(32)))
+            .map(String::valueOf)
+            .collect(Collectors.joining());
     }
 }
