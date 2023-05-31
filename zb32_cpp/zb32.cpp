@@ -32,7 +32,7 @@ int main(int argc, char *argv[])
     args.add_argument("--count").scan<'i', int>().default_value(1).help("Count of strings to generate");
     try 
     {
-        args.parse_args(argc, argv);                  // Example: ./main -abc 1.95 2.47
+        args.parse_args(argc, argv);
     }
     catch(const std::runtime_error& err) 
     {
