@@ -34,7 +34,7 @@ int main(int argc, char *argv[])
     {
         args.parse_args(argc, argv);
     }
-    catch(const std::runtime_error& err) 
+    catch(const std::runtime_error& err)
     {
         std::cerr << err.what() << std::endl;
         std::cerr << args;

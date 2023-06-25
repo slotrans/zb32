@@ -30,7 +30,7 @@ public class Zb32
             for(int i = 0; i < count; i++)
             {
                 System.out.println(generateZb32String(rng, length));
-            }           
+            }
         }
         catch(ArgumentParserException e)
         {

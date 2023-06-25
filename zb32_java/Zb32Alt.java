@@ -44,7 +44,7 @@ public class Zb32Alt
         for(int i = 0; i < count; i++)
         {
             System.out.println(generateZb32String());
-        }                   
+        }
     }
 
     private String generateZb32String()
@@ -55,7 +55,7 @@ public class Zb32Alt
         {
             sb.append(ALPHABET.charAt(rng.nextInt(32)));
         }
-        
+
         return sb.toString();
     }
 }
